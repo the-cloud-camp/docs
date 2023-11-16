@@ -1,4 +1,8 @@
 {
     "name": "simple",
-    "main": "app.js"
+    "main": "app.js",
+    "scripts": {
+        "test": "echo Hello NodeJS && exit 0"
+    }
+
 }
