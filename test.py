@@ -1,7 +1,5 @@
-from python_pytest.basics import add
-
-def test_add_can_add_numbers():
-    num = 3
+def test_add():
+    num1 = 3
     num2 = 45
-    result = add(num, num2)
+    result = num1 + num2
     assert result == 48
