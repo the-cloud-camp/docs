@@ -16,9 +16,6 @@ jobs:
         with:
             dotnet-version: '6.0.x'
       
-      - name: Setup NuGet
-        uses: NuGet/setup-nuget@v1.0.2
-      
       - name: Caching NuGet dependencie
         uses: actions/cache@v3
         with:
