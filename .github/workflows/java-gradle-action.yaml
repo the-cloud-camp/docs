@@ -22,8 +22,11 @@ jobs:
 
       - name: Run the Gradle package task
         uses: gradle/gradle-build-action@749f47bda3e44aa060e82d7b3ef7e40d953bd629
-        with:
-            arguments: build
+        env:
+          GRADLE_PROPERTIES: ${{ secrets.GRADLE_PROPERTIES }
+        run: |
+             echo "${GRADLE_PROPERTIES}" > ~/.gradle/gradle.properties
+             ./gradlew wrapper
             
       - name: Upload Artifact
         uses: actions/upload-artifact@v3
