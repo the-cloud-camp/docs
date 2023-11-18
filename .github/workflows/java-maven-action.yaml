@@ -7,7 +7,7 @@ jobs:
 
     runs-on: ubuntu-latest
     steps:
-      - name: heckout Repository
+      - name: Checkout Repository
         uses: actions/checkout@v4
 
       - name: Set up JDK 11
@@ -18,7 +18,13 @@ jobs:
             cache: maven
 
       - name: Build with Maven
-        run: mvn --batch-mode package --file pom.xml
+        run: mvn --batch-mode package
+      
+      - name: Debug
+        run: ls -R /home/runner/work/docs/docs
+
+      # - name: Build with Maven
+      #   run: mvn --batch-mode package --file pom.xml
       #   run: |
       #        mvn --batch-mode --update-snapshots verify
       #        mkdir staging && cp target/*.jar staging
