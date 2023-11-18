@@ -14,19 +14,21 @@ jobs:
       - name: Setup dotnet
         uses: actions/setup-dotnet@v3
         with:
-            dotnet-version: '6.0.x'
+            dotnet-version: '7.0.x'
       
-      - name: Caching NuGet dependencie
-        uses: actions/cache@v3
-        with:
-            path: ~/.nuget/packages
-            # Look to see if there is a cache hit for the corresponding requirements file
-            key: ${{ runner.os }}-nuget-${{ hashFiles('**/*.csproj') }}
-            restore-keys: |
-                          ${{ runner.os }}-nuget
+      # - name: Caching NuGet dependencie
+      #   uses: actions/cache@v3
+      #   with:
+      #       path: ~/.nuget/packages
+      #       # Look to see if there is a cache hit for the corresponding requirements file
+      #       key: ${{ runner.os }}-nuget-${{ hashFiles('**/*.csproj') }}
+      #       restore-keys: |
+      #                     ${{ runner.os }}-nuget
 
       - name: Install dependencies
-        run:  dotnet restore  
+        run:  |
+              cd ./c#
+              dotnet restore  
 
       - name: Test with dotnet
         run:  dotnet test --logger trx --results-directory "TestResults"
