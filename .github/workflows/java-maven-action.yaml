@@ -6,6 +6,7 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
@@ -19,8 +20,14 @@ jobs:
       - name: Check Maven Version
         run: mvn --version
       
-      - name: Run the Maven verify phase
+      - name: Run the Maven verify phase #Should create pom.xml first
         run: mvn --batch-mode --update-snapshots verify
+      
+      - name: Create Staging Folder 
+        run: mkdir staging
+
+      - name: Copy Jar file to Staging Folder
+        run: cp target/*.jar staging
 
       # - name: Set up JDK 11
       #   uses: actions/setup-java@v3
