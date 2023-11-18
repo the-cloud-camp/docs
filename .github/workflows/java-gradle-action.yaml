@@ -28,7 +28,7 @@ jobs:
 
       - name: Build the app
         run:  |
-              gradle wrapper
+              gradle init
               ./gradlew build
 
       # - name: Validate Gradle wrapper
