@@ -13,9 +13,10 @@ jobs:
       - name: Setup Maven Action
         uses: s4u/setup-maven-action@v1.10.0
         with:
-          java-version: 8
+          java-version: 11
           maven-version: 3.9.4
-      - name: Check Maven --version
+
+      - name: Check Maven Version
         run: mvn --version
 
       # - name: Set up JDK 11
