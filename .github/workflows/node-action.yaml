@@ -2,7 +2,7 @@ name: Node.js CI
 on: [push]
 jobs:
   build_test_run_nodejs:
-    runs-on: ${{ inputs.runs_on }}
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - name: Use Node.js
