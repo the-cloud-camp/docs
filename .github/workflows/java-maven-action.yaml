@@ -17,10 +17,10 @@ jobs:
             distribution: 'temurin'
 
       - name: Build with Maven
-        run: mvn --batch-mode package --settings ../../settings.xml
+        run: mvn --batch-mode package --settings ./settings.xml
       
       - name: Debug
-        run: ls -R /home/runner/work/docs/docs
+        run: ls -R /home/runner/work
 
       # - name: Build with Maven
       #   run: mvn --batch-mode package --file pom.xml
